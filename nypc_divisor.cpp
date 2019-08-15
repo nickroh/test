@@ -8,29 +8,26 @@ void input()
 	scanf("%d %d", &A, &B);
 }
 
-void calculate(int a)
+void calculate(int a, int b)
 {
 	int i;
-	for ( i = 1; i * i < a; i++)
+	
+	for (i = 1; i <= b; i++)
 	{
-		if (a%i == 0)
+		if (A%i == 0)
 		{
-			sum=sum+2;
+			sum++;
 		}
+		sum = sum + B / i - A / i;
 	}
-	if(i * i == a)
-	{
-		sum++;
-	}
+
 }
 
 int main()
 {
 	input();
-	for (int i = A; i <= B; i++)
-	{
-		calculate(i);
-	}
+	calculate(A, B);
+
 	printf("%d", sum);
 	return 0;
 }
